@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title-page {
+  height: 20vh;
+  background-color: rgba(138, 142, 146, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-content {
+  height: 80vh;
+  background-color: rgba(62, 64, 66, 0.5);
+}
+
+.calendar-container {
+  position: relative;
+  float: left;
+  top: 10%;
+  left: 15%;
+  text-align: center;
+}
+
+.task-board-container {
+  position: relative;
+  float: right;
+  top: 10%;
+  right: 15%;
+  text-align: center;
+}
+
+.calendar {
+  height: 500px;
+  width: 400px;
+  background-color: aquamarine;
+}
+
+.task-board {
+  height: 500px;
+  width: 400px;
+  background-color: rgb(127, 136, 255);
+}
+
+/*------------------------------Footer------------------------------*/
