@@ -47,7 +47,7 @@
   transition: transform 0.5s;
 }
 
-.task-manager-container {
+.task-board-container {
   position: relative;
   float: right;
   top: 8%;
@@ -66,7 +66,7 @@
   justify-content: center;
 }
 
-.task-manager {
+.task-board {
   height: 480px;
   width: 380px;
   background-color: rgb(127, 136, 255);
@@ -91,7 +91,7 @@
 }
 
 .calendar-container:hover,
-.task-manager-container:hover {
+.task-board-container:hover {
   transform: scale(1.1);
   transition: transform 0.5s;
 }
