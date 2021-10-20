@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*---------------------------------- Header ----------------------------------*/
+
+.title-page {
+  height: 20vh;
+  background-color: rgba(138, 142, 146, 0.5);
+}
+
+.title-page h1 {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 56px;
+}
+
+.login-btn {
+  float: right;
+  font-size: 18px;
+  padding: 8px;
+  border: none;
+  margin-right: 100px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.login-btn:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/*---------------------------------- Section 1 ----------------------------------*/
+
+.first-section {
+  height: 80vh;
+  background-color: rgba(62, 64, 66, 0.5);
+}
+
+.calendar-container {
+  position: relative;
+  float: left;
+  top: 8%;
+  left: 15%;
+  text-align: center;
+  transition: transform 0.5s;
+}
+
+.task-board-container {
+  position: relative;
+  float: right;
+  top: 8%;
+  right: 15%;
+  text-align: center;
+  transition: transform 0.5s;
+}
+
+.calendar {
+  height: 480px;
+  width: 380px;
+  background-color: aquamarine;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-board {
+  height: 480px;
+  width: 380px;
+  background-color: rgb(127, 136, 255);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-title {
+  margin-top: 10px;
+  font-size: 28px;
+}
+
+.page-link {
+  height: 450px;
+  width: 350px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.calendar-container:hover,
+.task-board-container:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s;
+}
+
+.second-section {
+  height: 100vh;
+  background-color: rgba(245, 245, 220, 0.5);
+}
+
+/*---------------------------------- Section 2 ----------------------------------*/
+
+.second-section h1 {
+  font-size: 56px !important;
+}
+
+/*---------------------------------- About Us ----------------------------------*/
+
+.about-us {
+  height: 50vh;
+  background-color: burlywood;
+  text-align: center;
+  padding: 60px;
+}
+
+.about-us p {
+  margin-top: 80px;
+}
+
+/*---------------------------------- Contact Us ----------------------------------*/
+
+.contact-us {
+  height: 50vh;
+  background-color: cornflowerblue;
+}
+
+.row {
+  height: 100%;
+  width: 100%;
+}
+
+.col-40-left {
+  float: left;
+  height: 100%;
+  width: 40%;
+  background-color: darkcyan;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-60-right {
+  float: right;
+  height: 100%;
+  width: 60%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-40-left-content {
+  margin: 10px;
+}
+
+/*---------------------------------- Contact Us Form ----------------------------------*/
+
+.contact-form {
+  width: 80%;
+  border-radius: 5px;
+  background-color: #f2f2f281;
+  padding: 30px 50px;
+}
+
+.col-25-left {
+  float: left;
+  width: 25%;
+  align-items: center;
+}
+
+.col-75-right {
+  float: right;
+  width: 75%;
+}
+
+.row-form:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+
+textarea {
+  height: 120px;
+}
+
+.row-submit {
+  display: flex;
+  justify-content: center;
+}
+
+input[type="submit"] {
+  background-color: rgba(46, 59, 88, 0.5);
+  color: #fff;
+  padding: 8px 50px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: rgba(96, 123, 182, 0.5);
+}
