@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+/*---------------------------------- Header ----------------------------------*/
+
 .title-page {
   height: 20vh;
   background-color: rgba(138, 142, 146, 0.5);
@@ -13,6 +15,20 @@
   text-align: center;
   padding-top: 30px;
   font-size: 56px;
+}
+
+.login-btn {
+  float: right;
+  font-size: 18px;
+  padding: 8px;
+  border: none;
+  margin-right: 100px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.login-btn:hover {
+  color: rgba(0, 0, 0, 0.7);
 }
 
 /*---------------------------------- Section 1 ----------------------------------*/
