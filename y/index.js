@@ -1,17 +1,20 @@
 // Your web app's Firebase configuration
-var firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: ""
+const firebaseConfig = {
+  apiKey: "AIzaSyDTux8kStcOHDEmLKB_fbqGbxNE2lLKHL4",
+  authDomain: "paw-lender.firebaseapp.com",
+  databaseURL: "https://paw-lender-default-rtdb.firebaseio.com",
+  projectId: "paw-lender",
+  storageBucket: "paw-lender.appspot.com",
+  messagingSenderId: "156009579264",
+  appId: "1:156009579264:web:e9123a4fd752386f0669e5",
+  measurementId: "G-ZSRT2Q966P"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 // Initialize variables
 const auth = firebase.auth();
-const database = firebase.database();
+const database = firebase.firestore();
+// const firestore = firebase.firestore();
 //google log in
 function googleLogin() {
   const provider1 = new firebase.auth.GoogleAuthProvider();
@@ -27,7 +30,19 @@ function facebookLogin() {
     const user = result.user;
   })
 }
-
+const signupForm = document.querySelector('#Sign-Up');
+signupForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  //get user info
+  const email = signupForm['signup-email'].value;
+  const password = signupForm['signup-password'].value;
+  //console.log(email, password);
+  //sign up the user
+  auth.createUserWithEmailAndPassword(email,password).then(cred => {
+    console.log(cred);
+  })
+})
+//signup 
 // // Set up our register function 
 // function register () {
 //   // Get all our input fields

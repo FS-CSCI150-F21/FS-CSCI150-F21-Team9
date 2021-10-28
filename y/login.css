@@ -89,7 +89,7 @@ form .txt_field{
 .pass:hover{
   text-decoration: underline;
 }
-input[type="submit"]{
+button[type="submit"]{
   width: 100%;
   height: 50px;
   border: 1px solid;
@@ -101,7 +101,39 @@ input[type="submit"]{
   cursor: pointer;
   outline: none;
 }
-input[type="submit"]:hover{
+button[type="submit"]:hover{
+  border-color: #2691d9;
+  transition: .5s;
+}
+button[type="Facebook"]{
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background: #2691d9;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+button[type="Facebook"]:hover{
+  border-color: #2691d9;
+  transition: .5s;
+}
+button[type="Google"]{
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background: #2691d9;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+button[type="Google"]:hover{
   border-color: #2691d9;
   transition: .5s;
 }

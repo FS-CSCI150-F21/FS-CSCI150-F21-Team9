@@ -17,24 +17,24 @@
 <body>
     <div class="center">
         <h1>Sign Up</h1>
-        <form method="Sign-Up">
+        <form id="Sign-Up">
             <div class="txt_field">
-                <input type="email" required>
+                <input type="email" id="signup-email" required>
                 <span></span>
-                <label>Email</label>
+                <label for="signup-email">Email</label>
             </div>
             <div class="txt_field">
-                <input type="password" required>
+                <input type="password" id="signup-password" required>
                 <span></span>
-                <label>Password</label>
+                <label for="signup-password">Password</label>
             </div>
             <!-- <div class="pass">Forgot Password?</div> -->
-            <input type="submit" value="Login">
+            <button type="submit"> Login </button>
             <!-- <button onclick="facebookLogin()">Log in with Facebook</button>
             
             <button onclick="googleLogin()">Log in with Google </button> -->
             <div class="signup_link">
-                Not a member? <a href="#">Signup</a>
+                <!-- Not a member? <a href="#">Signup</a> -->
                 <br>
                 <a href="./index.html">Back to Login </a>
             </div>
@@ -48,6 +48,7 @@
          https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
 
 <!-- Our script must be loaded after firebase references -->
 <script src="index.js"></script>
