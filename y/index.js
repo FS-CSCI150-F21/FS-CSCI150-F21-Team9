@@ -15,6 +15,11 @@ firebase.initializeApp(firebaseConfig);
 // Initialize variables
 const auth = firebase.auth();
 const database = firebase.firestore();
+
+//listen for auth status change 
+auth.onAuthStateChanged(user => {
+  console.log(user)
+})
 // const firestore = firebase.firestore();
 //google log in
 function googleLogin() {
@@ -32,6 +37,7 @@ function facebookLogin() {
   })
 }
 //import M from "materialize-css"
+//singup new users
 const signupForm = document.querySelector('#Sign-Up');
 signupForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -47,3 +53,30 @@ signupForm.addEventListener('submit', (e) => {
     signupForm.reset();
   })
 })
+//code need for logout method
+//html <a href"#" class "grey-text id="logout">Logout</a>
+const logout = document.querySelector('#logout');
+logout.addEventListener('click', (e) => {
+  e.preventDefault();
+  auth.signOut();
+  //uncomment code donw below to check if user is logged out 
+  //console.log('user signed out);
+});
+//for refrence signin-form
+
+const signinForm = document.querySelector('#signin-Form');
+signinForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  //get user info
+  const email = signinForm['login-email'].value;
+  const password = signinForm['login-password'].value;
+
+  auth.signInWithEmailAndPassword(email, password).then(cred => {
+    console.log(cred.user);
+    //close login module reset form 
+    const modal = document.querySelector('#modal-login')
+    M.Modal.getInstance(modal).close();
+    signinForm.reset();
+  });
+});
