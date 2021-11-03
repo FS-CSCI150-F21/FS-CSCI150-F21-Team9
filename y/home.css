@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: serif;
 }
 
 /*---------------------------------- Header ----------------------------------*/
@@ -21,13 +22,25 @@
   float: right;
   font-size: 18px;
   padding: 8px;
-  border: none;
-  margin-right: 100px;
+  text-decoration: none;
+  margin-right: 20px;
   cursor: pointer;
+  color: black;
+}
+
+.logout-btn {
+  float: right;
+  font-size: 18px;
+  padding: 8px;
+  border: none;
+  margin-right: 50px;
+  cursor: pointer;
+  color: black;
   background-color: transparent;
 }
 
-.login-btn:hover {
+.login-btn:hover,
+.logout-btn:hover {
   color: rgba(0, 0, 0, 0.7);
 }
 
