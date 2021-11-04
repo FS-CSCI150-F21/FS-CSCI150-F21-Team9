@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <title>Welcome to Firebase Hosting</title> -->
-    <link rel="stylesheet" href="./login.css" />
-    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-    <script src="app.js"></script>
-
-
-    <!-- update the version number as needed -->
+    <!-- firebase -->
     <script defer src="/__/firebase/9.0.2/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/9.0.2/firebase-auth-compat.js"></script>
@@ -22,67 +16,50 @@
     <script defer src="/__/firebase/9.0.2/firebase-remote-config-compat.js"></script>
     <script defer src="/__/firebase/9.0.2/firebase-performance-compat.js"></script>
     <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
+          initialize the SDK after all desired features are loaded, set useEmulator to false
+          to avoid connecting the SDK to running emulators.
+        -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-<div class="container">
-  <div class="forms-container">
-    <div class="signin-signup">
-      <form action="#" class="sign-in-form">
-        <h2 class="title">Sign in</h2>
-        <div class="input-field">
-          <i class="fas fa-user"></i>
-          <input type="text" placeholder="Email" />
-        </div>
-        <div class="input-field">
-          <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Password" />
-        </div>
-        <input type="submit" value="Login" class="btn solid" />
-        <p class="social-text">Or Sign in with social media</p>
-        <div class="social-media">
-          <a href="#" class="social-icon">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <!-- <a href="#" class="social-icon">
-                            <i class="fab fa-twitter"></i>
-                        </a> -->
-          <a href="#" class="social-icon">
-            <i class="fab fa-google"></i>
-          </a>
-        </div>
-      </form>
-      <form action="#" class="sign-up-form">
-        <h2 class="title">Sign up</h2>
-        <!-- <div class="input-field">
-                        <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" />
-                    </div> -->
-        <div class="input-field">
-          <i class="fas fa-envelope"></i>
-          <input type="email" placeholder="Email" />
-        </div>
-        <div class="input-field">
-          <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Password" />
-        </div>
-        <input type="submit" class="btn" value="Sign up" />
-        <p class="social-text">Or Sign up with social media</p>
-        <div class="social-media">
-          <a href="#" class="social-icon">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <!-- <a href="#" class="social-icon">
-                            <i class="fab fa-twitter"></i>
-                        </a> -->
-          <a href="#" class="social-icon">
-            <i class="fab fa-google"></i>
-          </a>
-        </div>
-      </form>
+    <title>Login + Firebase Database</title>
+    <!-- Cool Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+    <!-- Our stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./login.css">
+</head>
+<body>
+    <div id="modal-login"class="center">
+        <h1>Login</h1>
+        <form method="Sign-In" id='signin-form'>
+            <div class="txt_field">
+                <input type="email" id="login-email"required>
+                <span></span>
+                <label>Email</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" id="login-password"required>
+                <span></span>
+                <label>Password</label>
+            </div>
+            <button type="submit"> Login </button>
+            <!-- <div class="pass">Forgot Password?</div> -->
+            <!-- <input type="submit" value="Login"> -->
+            <button type="Facebook" onclick="facebookLogin()">Log in with Facebook</button>
+            
+            <button type="Google" onclick="googleLogin()">Log in with Google </button>
+            <div class="signup_link">
+                Not a member? <a href="./signup.html">Signup</a>
+            </div>
+        </form>
     </div>
-  </div>
+</body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
+    
 
   <div class="panels-container">
     <div class="panel left-panel">
@@ -111,7 +88,12 @@
     </div>
   </div>
 </div>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 
-<script src="app.js"></script>
-  </body>
+    <!-- Our script must be loaded after firebase references -->
+    <script src="index.js"></script>
+
 </html>
