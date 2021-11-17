@@ -14,7 +14,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 // Initialize variables
 const auth = firebase.auth();
-const database = firebase.realtime();
+const database = firebase.firestore();
 
 //listen for auth status change 
 auth.onAuthStateChanged(user => {
