@@ -1,4 +1,4 @@
-
+import M from "materialize-css"
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDTux8kStcOHDEmLKB_fbqGbxNE2lLKHL4",
@@ -15,6 +15,7 @@ firebase.initializeApp(firebaseConfig);
 // Initialize variables
 const auth = firebase.auth();
 const database = firebase.firestore();
+
 
 //listen for auth status change 
 auth.onAuthStateChanged(user => {
