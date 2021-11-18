@@ -10,6 +10,9 @@
   //               measurementId: "G-ZSRT2Q966P"
   //           };
         // firebase.initializeApp(firebaseConfig);
+firebase.auth.Auth.Persistence.SESSION;
+
+
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }
