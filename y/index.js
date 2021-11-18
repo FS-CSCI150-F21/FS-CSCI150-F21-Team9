@@ -1,34 +1,60 @@
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyDTux8kStcOHDEmLKB_fbqGbxNE2lLKHL4",
-  authDomain: "paw-lender.firebaseapp.com",
-  databaseURL: "https://paw-lender-default-rtdb.firebaseio.com",
-  projectId: "paw-lender",
-  storageBucket: "paw-lender.appspot.com",
-  messagingSenderId: "156009579264",
-  appId: "1:156009579264:web:e9123a4fd752386f0669e5",
-  measurementId: "G-ZSRT2Q966P"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-// Initialize variables
-const auth = firebase.auth();
-const database = firebase.realtime();
+  // const firebaseConfig = {
+  //               apiKey: "AIzaSyDTux8kStcOHDEmLKB_fbqGbxNE2lLKHL4",
+  //               authDomain: "paw-lender.firebaseapp.com",
+  //               databaseURL: "https://paw-lender-default-rtdb.firebaseio.com",
+  //               projectId: "paw-lender",
+  //               storageBucket: "paw-lender.appspot.com",
+  //               messagingSenderId: "156009579264",
+  //               appId: "1:156009579264:web:e9123a4fd752386f0669e5",
+  //               measurementId: "G-ZSRT2Q966P"
+  //           };
+        // firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
+else {
+   firebase.app(); // if already initialized, use that one
+  }
+        //const auth = firebase.auth();
+        //const database = firebase.firestore();
 
+
+database.collection('users').get().then(snapshot => {
+  console.log(snapshot.docs);
+});
 //listen for auth status change 
+
+
+
+//firebase.auth().onAuthStateChanged(user => {
+  //if(user) {
+   // window.location = 'home.html'; //After successful login, user will be redirected to home.html
+  //}
+//});
 auth.onAuthStateChanged(user => {
   //console.log(user)
+  if(user) {
+    window.location = 'home.html'; //redirect user to home page after login is successful
+  }
   if(user){
-    console.log('user logged in', user);
+    database.collection('users').get().then(snapshot => {
+      //code here
+      setupUsers(snapshot.docs);
+    });
+    // console.log('user logged in', user);
   }
   else {
+    setupUsers([]);
     console.log('user logged out');
   }
-})
+}); 
+
+// <----------           SignUp              ----------->
 // const firestore = firebase.firestore();
 //google log in
 function googleLogin() {
+  e.preventDefault();
   const provider1 = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider1)
       .then(result => {
@@ -36,6 +62,7 @@ function googleLogin() {
       })
 }
 function facebookLogin() {
+  e.preventDefault();
   const provider = new firebase.auth.FacebookAuthProvider();
   firebase.auth().signInWithPopup(provider)
   .then(result => {
@@ -73,12 +100,11 @@ logout.addEventListener('click', (e) => {
 const signinForm = document.querySelector('#signin-Form');
 signinForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  
   //get user info
   const email = signinForm['login-email'].value;
   const password = signinForm['login-password'].value;
 
-  auth.signInWithEmailAndPassword(email, password).then(cred => {
+  auth.signInWithEmailAndPassword(email, password).then((cred) => {
     //console.log(cred.user);
     //close login module reset form 
     const modal = document.querySelector('#modal-login')
@@ -86,3 +112,4 @@ signinForm.addEventListener('submit', (e) => {
     signinForm.reset();
   });
 });
+window.onload = "http://www.google.com/"

@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <!-- firebase -->
-    <script defer src="/__/firebase/9.0.2/firebase-app-compat.js"></script>
+    <!-- <script defer src="/__/firebase/9.0.2/firebase-app-compat.js"></script> -->
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/9.0.2/firebase-auth-compat.js"></script>
+    <!-- <script defer src="/__/firebase/9.0.2/firebase-auth-compat.js"></script>
     <script defer src="/__/firebase/9.0.2/firebase-database-compat.js"></script>
     <script defer src="/__/firebase/9.0.2/firebase-firestore-compat.js"></script>
     <script defer src="/__/firebase/9.0.2/firebase-functions-compat.js"></script>
@@ -14,12 +14,12 @@
     <script defer src="/__/firebase/9.0.2/firebase-storage-compat.js"></script>
     <script defer src="/__/firebase/9.0.2/firebase-analytics-compat.js"></script>
     <script defer src="/__/firebase/9.0.2/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/9.0.2/firebase-performance-compat.js"></script>
+    <script defer src="/__/firebase/9.0.2/firebase-performance-compat.js"></script> -->
     <!-- 
           initialize the SDK after all desired features are loaded, set useEmulator to false
           to avoid connecting the SDK to running emulators.
         -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- <script defer src="/__/firebase/init.js?useEmulator=true"></script> -->
     <title>Login + Firebase Database</title>
     <!-- Cool Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -65,8 +65,24 @@
          https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script>
+        const firebaseConfig = {
+                apiKey: "AIzaSyDTux8kStcOHDEmLKB_fbqGbxNE2lLKHL4",
+                authDomain: "paw-lender.firebaseapp.com",
+                databaseURL: "https://paw-lender-default-rtdb.firebaseio.com",
+                projectId: "paw-lender",
+                storageBucket: "paw-lender.appspot.com",
+                messagingSenderId: "156009579264",
+                appId: "1:156009579264:web:e9123a4fd752386f0669e5",
+                measurementId: "G-ZSRT2Q966P"
+            };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const database = firebase.firestore();
+    </script>
 
     <!-- Our script must be loaded after firebase references -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="index.js"></script>
     <script src="app.js"></script>
 
