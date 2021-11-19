@@ -23,7 +23,7 @@ else {
         //const database = firebase.firestore();
 
 
-database.collection('users').get().then(snapshot => {
+db.collection('users').get().then(snapshot => {
   console.log(snapshot.docs);
 });
 //listen for auth status change 
@@ -41,7 +41,7 @@ auth.onAuthStateChanged(user => {
     window.location = 'home.html'; //redirect user to home page after login is successful
   }
   if(user){
-    database.collection('users').get().then(snapshot => {
+    db.collection('users').get().then(snapshot => {
       //code here
       setupUsers(snapshot.docs);
     });
