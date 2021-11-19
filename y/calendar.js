@@ -1,3 +1,5 @@
+/* import{index}
+ */
 const date = new Date();
 
 const renderCalendar = () => {
@@ -60,3 +62,5 @@ document.querySelector(".next").addEventListener("click", () =>{
 });
 
 renderCalendar();
+
+/*--------------------------- Event Placeholder ---------------------------*/
