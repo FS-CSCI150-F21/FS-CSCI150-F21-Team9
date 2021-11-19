@@ -1,4 +1,4 @@
-
+import M from "materialize-css"
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDTux8kStcOHDEmLKB_fbqGbxNE2lLKHL4",
@@ -16,9 +16,16 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const database = firebase.firestore();
 
+
 //listen for auth status change 
 auth.onAuthStateChanged(user => {
-  console.log(user)
+  //console.log(user)
+  if(user){
+    console.log('user logged in', user);
+  }
+  else {
+    console.log('user logged out');
+  }
 })
 // const firestore = firebase.firestore();
 //google log in
@@ -47,7 +54,7 @@ signupForm.addEventListener('submit', (e) => {
   //console.log(email, password);
   //sign up the user
   auth.createUserWithEmailAndPassword(email,password).then(cred => {
-    console.log(cred.user);
+    //console.log(cred.user);
     const modal = document.querySelector('#modal-signup')
     M.Modal.getInstance(modal).close();
     signupForm.reset();
@@ -73,7 +80,7 @@ signinForm.addEventListener('submit', (e) => {
   const password = signinForm['login-password'].value;
 
   auth.signInWithEmailAndPassword(email, password).then(cred => {
-    console.log(cred.user);
+    //console.log(cred.user);
     //close login module reset form 
     const modal = document.querySelector('#modal-login')
     M.Modal.getInstance(modal).close();
