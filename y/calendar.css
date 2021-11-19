@@ -135,10 +135,73 @@ html {
   align-items: center;
 }
 
+/*--------------------------- Event Placeholder ---------------------------*/
 .event-placeholder {
   width: 80%;
   height: 88%;
   background-color: rgb(202, 169, 120);
   border-radius: 10px;
   margin-right: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event-container {
+  height: 85%;
+  width: 95%;
+  /* background-color: darkblue; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+  overflow-y: scroll;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.event {
+  display: inline-block;
+  height: 80px;
+  width: 95%;
+  background-color: rgba(106, 158, 255, 0.6);
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.add-event {
+  height: 8%;
+  width: 90%;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-size: 36px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-event:hover {
+  color: rgb(106, 158, 255);
+  transition: 0.2s;
 }
