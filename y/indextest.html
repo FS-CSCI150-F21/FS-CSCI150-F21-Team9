@@ -44,5 +44,61 @@
             }
         </script>
     </body>
+<script id="Name of the page JS">
+    //create variable names to read and write onto the database
+    //example
+    var nameV, emailV, taskV, userId; //can add as many as you need
+    //function to initizalize these variables with what the user inputs
+    // html must have an element id ex "<input id="nameBox" type="text"> </input>"
+    function Ready() {
+        nameV = document.getElementById('nameBox').value;
+        emailV = document.getElementById('emailBox').value;
+        taskV = document.getElementById('taskBox').value;
+        userV = document.getElementById('userId').value;
+    }
 
+    // insert function data into the database
+    //insert is the name of the button id, so this will change for every button
+    document.getElementById('insert').onclick = function() {
+        //first call ready function to fill update new values 
+    Ready();
+    //write data to fire base
+    //refrence is the address (real time)(collection) we can taname it user1 for ex
+    firebase.database().ref('user/'+userId).set({
+        nameOfUser: nameV,  //name OfUser is the id for the database thsi will later be used to retrieve information like the name of the user (you can name this to what ever you would like)
+        nameOfTask: taskV,
+        nameofEmail: emailV,
+        userId: userId
+    });
+    }
+    //select data //retrieve
+    document.getElementById('select').onclick = function (){
+        firebase.database().ref('user/'+ userId).on('value', function(snapshot) {
+            document.getElementById('nameBox').value = snapshot.val().nameOfUser;
+            document.getElementById('emailBox').value = snapshot.val().nameofEmail;
+            document.getElementById('taskBox').value = snapshot.val().nameOfTask;
+            document.getElementById('userId').value = snapshot.val().userId;
+
+        });
+    }
+   //update information
+    document.getElementById('update').onclick = function () {
+            Ready();
+            firebase.database().ref('user/'+userId).update({
+                nameOfUser: nameV,  
+                nameOfTask: taskV,
+                nameofEmail: emailV,
+                userId:userId
+            });
+        }
+
+    //delete data
+    document.getElementById('delete').onclick = function () {
+            Ready();
+            firebase.database().ref('user/'+userId).remove();
+        }
+
+ //user Id is meant to differentiate different user and target a specific user base on the ID
+
+</script>
 </html>
