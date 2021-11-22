@@ -37,9 +37,7 @@ db.collection('users').get().then(snapshot => {
 //});
 auth.onAuthStateChanged(user => {
   //console.log(user)
-  if(user) {
-    window.location = 'home.html'; //redirect user to home page after login is successful
-  }
+
   if(user){
     db.collection('users').get().then(snapshot => {
       //code here
@@ -51,8 +49,11 @@ auth.onAuthStateChanged(user => {
     setupUsers([]);
     console.log('user logged out');
   }
+  
 }); 
-
+if(user) {
+    window.location = 'home.html'; //redirect user to home page after login is successful
+  }
 // <----------           SignUp              ----------->
 // const firestore = firebase.firestore();
 //google log in
