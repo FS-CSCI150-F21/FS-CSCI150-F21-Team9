@@ -10,14 +10,37 @@ h1{
     margin-top: 80px;
     text-align: center;
 }
+h2{
+    color: rgb(192, 27, 27);
+    /* font-size: 64px; */
+    letter-spacing: 2px;
+    margin-top: 80px;
+    text-align: center;
+    font-family: ubuntu;
+}
 
-.content{
+.content{ /* Create Task + Task List Display */
     background: #fff;
-    max-width: 960px;
-    margin: 30px auto;
+    width: 40%;
+    margin: 30px;
     padding:  20px 30px;
-    border-radius: 10px 120px 10px 10px;
-    box-shadow: 1px 3px 5px rgba(0,0,0,0.1)
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+    float: left;
+}
+
+.currentTask{ /* Current Task Display */
+    background: #fff;
+    width: 40%;
+    margin: 30px;
+    padding:  20px 30px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+    float: right;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
 }
 
 ul{
@@ -73,6 +96,19 @@ form input{
     display: block;
     box-sizing: border-box;
     font-size: 18px;
+}
+
+form textarea{
+    float: left;
+    width: 38%;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid #eee;
+    margin: 0 1%;
+    display: block;
+    box-sizing: border-box;
+    font-size: 18px;
+    resize: none;
 }
 
 form input:focus{

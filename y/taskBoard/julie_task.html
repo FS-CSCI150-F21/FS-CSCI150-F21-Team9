@@ -9,12 +9,24 @@
 
         <div class="content">
             <form id="add-task-form">
-                <input type="text" name="task" placeholder="Task name">
+                <input type="text" name="task" placeholder="Task name" required>
                 <input type="text" name="description" placeholder="Task description">
+                <!-- <textarea name="description" cols="50" placeholder="Task Description"> </textarea> -->
+
+                <!-- <label for="date">Date:</label> -->
+                <!-- <input type="date" id="date" name="date"> -->
                 <button>Add Task</button>
             </form>
             <ul id="task-list"></ul>
         </div>
+
+        <div class="currentTask">
+            <form id="add-task-form">
+                <h2>Select A Task To View </h2>
+            </form>
+            <ul id="task-list"></ul>
+        </div> 
+
         <script src="/index.js"></script>
         <script src="julie_task.js"></script>
     </body>
