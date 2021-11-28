@@ -25,6 +25,7 @@ const renderCalendar = () => {
     ];
 
     document.querySelector(".date h1").innerHTML = month[date.getMonth()];
+    document.querySelector(".date p").innerHTML = date.getFullYear();
 
     let days = "";
     let firstDayIndex = date.getDay();
