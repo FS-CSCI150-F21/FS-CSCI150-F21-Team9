@@ -1,4 +1,3 @@
-// import M from "materialize-css"
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDTux8kStcOHDEmLKB_fbqGbxNE2lLKHL4",

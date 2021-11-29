@@ -5,19 +5,60 @@
 }
 
 html {
-  background-color: rgba(0, 18, 78, 0.8);
+  font-size: 16px;
+  background-color: rgba(1, 68, 155, 0.3);
 }
 
-/* header {
+header {
   height: 15vh;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+  font-family: sans-serif;
+}
+
+header h1 {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  padding-top: 30px;
+  font-size: 56px;
+}
+
+ul {
+  text-align: right;
+}
+
+li {
+  display: inline;
+}
+
+.link-btn,
+.logout {
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+  margin-top: 80px;
+  margin-right: 50px;
+}
+
+.logout:hover,
+.link-btn:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+hr {
+  height: 5px;
+  background-color: rgba(0, 0, 0, 0.815);
+  border-width: 0;
+  margin: 0 40px 0 40px;
+}
 
 .page-content {
-  height: 100vh;
+  height: 84vh;
   width: 100%;
 }
 
@@ -36,10 +77,12 @@ html {
   align-items: center;
 }
 
+/*--------------------------- Calendar ---------------------------*/
+
 .calendar {
   width: 46rem;
   height: 42rem;
-  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 81, 255, 0.6);
   font-family: sans-serif;
   border-radius: 10px;
 }
@@ -47,7 +90,7 @@ html {
 .month {
   width: 100%;
   height: 20%;
-  background-color: rgba(0, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   display: flex;
@@ -63,6 +106,7 @@ html {
 }
 
 .month h1 {
+  color: #fff;
   font-size: 36px;
   font-weight: 400;
   text-transform: uppercase;
@@ -71,7 +115,9 @@ html {
 }
 
 .month p {
+  color: #fff;
   font-size: 24px;
+  font-weight: bold;
 }
 
 .weekdays {
@@ -94,9 +140,10 @@ html {
 
 .days {
   width: 100%;
-  padding: 10px 100px;
+  /* padding: 10px 100px; */
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding: 10px;
 }
 
@@ -111,19 +158,13 @@ html {
   transition: background-color 0.2s;
 }
 
-.days div:hover:not(.today) {
-  background-color: rgb(0, 0, 0);
-  border: 5px solid rgba(0, 255, 255, 0.3);
-  cursor: pointer;
-}
-
 .prev-date,
 .next-date {
   opacity: 0.4;
 }
 
 .today {
-  background-color: rgba(0, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .container-right {
@@ -139,7 +180,7 @@ html {
 .event-placeholder {
   width: 80%;
   height: 88%;
-  background-color: rgb(202, 169, 120);
+  background-color: rgba(0, 68, 253, 0.2);
   border-radius: 10px;
   margin-right: 60px;
   display: flex;
@@ -147,16 +188,12 @@ html {
   align-items: center;
 }
 
-.event-container {
+#event-container {
   height: 85%;
   width: 95%;
-  /* background-color: darkblue; */
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
   margin-top: 10px;
   overflow-y: scroll;
+  font-family: cursive;
 }
 
 /* width */
@@ -180,13 +217,47 @@ html {
 }
 
 .event {
+  position: relative;
   display: inline-block;
   height: 80px;
   width: 95%;
-  background-color: rgba(106, 158, 255, 0.6);
+  background-color: rgba(0, 81, 255, 0.3);
   border-radius: 10px;
   margin-top: 10px;
   margin-right: 10px;
+  padding: 10px;
+  transition: 0.2s;
+}
+
+.event:hover {
+  width: 96%;
+  transition: 0.2s;
+}
+
+.title {
+  margin-left: 10px;
+  display: block;
+  font-size: 24px;
+}
+
+.date {
+  font-size: 18px;
+  margin-top: 6px;
+  margin-left: 10px;
+  color: rgb(32, 32, 32);
+}
+
+.event i {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.event i:hover {
+  font-size: 18px;
+  transition: 0.2s;
 }
 
 .add-event {
@@ -202,6 +273,98 @@ html {
 }
 
 .add-event:hover {
-  color: rgb(106, 158, 255);
+  color: rgb(29, 108, 255);
   transition: 0.2s;
+}
+
+/*--------------------------- Event Form ---------------------------*/
+form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 400px;
+  width: 400px;
+  background-color: rgba(0, 1, 88, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 36px;
+  border-radius: 10px;
+  border: #fff solid 2px;
+  font-family: sans-serif;
+}
+
+#close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(-130%, 80%);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#close:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+input[type="text"] {
+  width: 80%;
+  height: 10%;
+  padding: 20px;
+  margin-top: 50px;
+  border: none;
+  border-radius: 10px;
+}
+
+#submit-event {
+  height: 10%;
+  width: 20%;
+  margin-top: 50px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#submit-event:hover {
+  background-color: azure;
+}
+
+/*--------------------------- Calendar Responsive ---------------------------*/
+@media screen and (max-width: 1600px) {
+  html {
+    font-size: 13px;
+  }
+
+  .month h1 {
+    font-size: 30px;
+  }
+
+  .month p {
+    font-size: 20px;
+  }
+
+  .weekdays div {
+    font-size: 18px;
+    font-weight: 500;
+    width: calc(40.5rem / 7);
+  }
+
+  .days div {
+    font-size: 18px;
+    margin: 0.45rem;
+    width: calc(34rem / 7);
+    height: 3.3rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 12px;
+  }
 }
