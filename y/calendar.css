@@ -12,9 +12,6 @@ html {
 header {
   height: 15vh;
   width: 100%;
-  /*   display: flex;
-  align-items: center;
-  justify-content: center; */
   font-family: sans-serif;
 }
 
@@ -53,8 +50,15 @@ li {
   color: rgba(0, 0, 0, 0.7);
 }
 
+hr {
+  height: 5px;
+  background-color: rgba(0, 0, 0, 0.815);
+  border-width: 0;
+  margin: 0 40px 0 40px;
+}
+
 .page-content {
-  height: 85vh;
+  height: 84vh;
   width: 100%;
 }
 

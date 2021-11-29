@@ -1,3 +1,6 @@
+$("#event-form").hide();
+
+
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -54,12 +57,6 @@ function renderEvent(doc){
 }
 
 // Get the data from database and display on the web page
-/* db.collection("events").orderBy("date").get().then(snapshot => {
-  snapshot.docs.forEach(doc => {
-      renderEvent(doc);
-  });
-}); */
-
 db.collection("events").onSnapshot(snapshot =>{
   let changes = snapshot.docChanges();
   console.log(changes);
@@ -74,8 +71,6 @@ db.collection("events").onSnapshot(snapshot =>{
 })
 
 /* --------------------------- Add Event Form --------------------------- */
-$("#event-form").hide();
-
 $("#add").click(function(){
   $("#event-form").show();
 });
