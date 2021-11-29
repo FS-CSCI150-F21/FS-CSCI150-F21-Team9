@@ -46,7 +46,7 @@ h2{  /*Used For Current Task Name */
     right: 0; /* positions it to the right */
 }
 
-.task {
+.task { /* Shows the current task name */
     display: inline-block;
     height: auto;
     width: 90%;
@@ -58,7 +58,7 @@ h2{  /*Used For Current Task Name */
     right: 0;
  }
 
-.task-display{
+.task-display{  /* Shows the list of tasks */
     display: inline-block;
     /* background: #fff; */
     height: auto;
@@ -67,6 +67,7 @@ h2{  /*Used For Current Task Name */
     position: absolute;
     top: 150px;
 }
+
 
 ul{
     list-style-type: none;
@@ -173,3 +174,4 @@ button{
     letter-spacing: 1px;
     color: white;
 }
+

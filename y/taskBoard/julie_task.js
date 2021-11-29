@@ -66,3 +66,8 @@ database.collection('tasks').orderBy('category').onSnapshot(snapshot => { // cha
         }
     })
 })
+
+function refreshPage(){
+    window.location.reload();
+} 
+
