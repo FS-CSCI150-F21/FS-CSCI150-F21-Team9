@@ -1,11 +1,33 @@
 <html>
     <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+    
+        <!-------------------- Font Awwsome -------------------->
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
+    
+        <!-------------------- CSS -------------------->
+        <title>Task Page</title>
         <link rel="stylesheet" href="maryam_task.css">
     </head>
     <body>
-        <h1>Manage your tasks here!</h1>
+        <header>
+            <h1 style="color: rgb(4, 23, 49);">Task Manager</h1>
+            <ul1>
+              <li1><a href="home.html" class="link-btn">Home</a></li>
+              <li1><a href="calendar.html" class="link-btn">Calendar</a></li>
+              <li1><button class="logout" id="logout">Logout</button></li>
+            </ul1>
+          </header>
+
+          <hr>
+
 
 
         <div class="content">
@@ -22,18 +44,13 @@
             <div class="task">
                 <h2>Select A Task To View</h2>
             </div>
-
-            <div class="task-display">
+            <button style="background-color: rgba(0, 0, 0, 0.6);" class="task-display">
                 <form id="add-task-form"></form>
                 <ul id="task-list"></ul>
-            </div>
+            </button>       
         </div> 
 
-        <script src="/index.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+        <script src="index.js"></script>
         <script src="maryam_task.js"></script>
     </body>
 </html>

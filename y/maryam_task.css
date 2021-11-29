@@ -1,5 +1,28 @@
 body{
-    background-color: rgba(0, 18, 78, 0.8);    font-family: ubuntu;
+    background-color: rgba(1, 68, 155, 0.3);
+    font-family: ubuntu;
+}
+
+header {
+    height: 15vh;
+    width: 100%;
+    font-family: sans-serif;
+  }
+  
+header h1 {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%);
+    padding-top: 6px;
+    font-size: 56px;
+}
+
+hr {
+    height: 5px;
+    background-color: rgba(0, 0, 0, 0.815);
+    border-width: 0;
+    margin: 15px 40px 25px 40px;
 }
 
 h1{
@@ -19,7 +42,7 @@ h2{  /*Used For Current Task Name */
 }
 
 .content{ /* Create Task + Task List Display */
-    background: #fff;
+    background-color: rgba(0, 81, 255, 0.6);
     width: 30%;
     margin: 30px;
     padding:  20px 30px;
@@ -31,13 +54,13 @@ h2{  /*Used For Current Task Name */
 
 .currentTask{ /* Current Task Display */
     /* background: #fff; */
-    background-color: rgb(202, 169, 120);
+    background-color: rgba(0, 81, 255, 0.6);
     width: 50%;
     margin: 30px;
     padding:  20px 30px;
     border-radius: 10px 10px 10px 10px;
     box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
-    height: 50%;
+    height: 70%;
     display: flex;
     justify-content: center;
     /* align-items: center; */
@@ -50,22 +73,65 @@ h2{  /*Used For Current Task Name */
     display: inline-block;
     height: auto;
     width: 90%;
-    background-color: rgba(106, 158, 255, 0.6);
+    background-color: rgba(15, 45, 100, 0.6);
     border-radius: 10px;
     margin-top: 10px;
     margin-right: 10px;
     position: absolute;
-    right: 0;
+    border-radius: 10px 10px 10px 10px;
+    top: 10px;
  }
 
 .task-display{
     display: inline-block;
-    /* background: #fff; */
+    background-color: #fafafa;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
     height: auto;
     width: 90%;
     border-radius: 10px 10px 10px 10px;
     position: absolute;
     top: 150px;
+}
+
+ul1 {
+    text-align: right;
+}
+  
+li1 {
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+    margin-top: 80px;
+    margin-right: 50px;
+}
+
+.link-btn,
+.logout {
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+  margin-top: 80px;
+  margin-right: 25px;
+    margin-left: 35px;
+}
+
+.logout:hover,
+.link-btn:hover {
+  color: rgba(0, 0, 0, 0.7);
 }
 
 ul{
@@ -129,6 +195,7 @@ form input{
     display: block;
     box-sizing: border-box;
     font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 form textarea{
@@ -146,7 +213,7 @@ form textarea{
 
 form input:focus{
     outline: none;
-    border-bottom: 3px solid #be3232;
+    border-bottom: 3px solid #452a91;
     padding-bottom: 8px;
     transition: all ease 0.2s;
 }
@@ -159,8 +226,7 @@ form:after{
 
 button{
     border: 0;
-    background: #be3232;
-    /* border-radius: 10px; */
+    background-color: rgba(0, 81, 255, 0.6);    /* border-radius: 10px; */
     border-radius: 12px;
     padding: 13px;
     margin-top: 13px;
