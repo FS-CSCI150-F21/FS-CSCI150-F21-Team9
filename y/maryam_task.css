@@ -1,0 +1,175 @@
+body{
+    background-color: rgba(0, 18, 78, 0.8);    font-family: ubuntu;
+}
+
+h1{
+    color: #fff;
+    font-size: 64px;
+    letter-spacing: 2px;
+    margin-top: 80px;
+    text-align: center;
+}
+h2{  /*Used For Current Task Name */
+    /* color: rgb(192, 27, 27); */
+    color: white;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: ubuntu;
+    font-size: 20px;
+}
+
+.content{ /* Create Task + Task List Display */
+    background: #fff;
+    width: 30%;
+    margin: 30px;
+    padding:  20px 30px;
+    border-radius: 10px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+    float: left;
+
+}
+
+.currentTask{ /* Current Task Display */
+    /* background: #fff; */
+    background-color: rgb(202, 169, 120);
+    width: 50%;
+    margin: 30px;
+    padding:  20px 30px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    overflow-y: scroll;
+    position: absolute;
+    right: 0; /* positions it to the right */
+}
+
+.task {
+    display: inline-block;
+    height: auto;
+    width: 90%;
+    background-color: rgba(106, 158, 255, 0.6);
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    position: absolute;
+    right: 0;
+ }
+
+.task-display{
+    display: inline-block;
+    /* background: #fff; */
+    height: auto;
+    width: 90%;
+    border-radius: 10px 10px 10px 10px;
+    position: absolute;
+    top: 150px;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+li{
+    padding: 20px;
+    background: #f6f6f6;
+    font-size: 20px;
+    color: #555;
+    position: relative;
+    border-bottom: 1px solid #e6e6e6;
+    height: auto;
+    border-radius: 10px;
+}
+
+li:nth-child(even){
+    padding: 20px;
+    background: #f2f2f2;
+}
+
+li span{
+    display: block;
+}
+
+li span:nth-child(2){
+    font-size: 16px;
+    margin-top: 6px;
+    color: #999;
+}
+
+li span:nth-child(3){ /* cateogry */
+    font-size: 16px;
+    margin-top: 6px;
+    color: rgb(17, 46, 177);
+}
+
+li div{ /* cross: x delete button onn task */
+    position: absolute;
+    top: 0;
+    right: 0px;
+    background: rgba(255,255,255,0.6);
+    width: 40px;
+    text-align: center;
+    padding: 10px 0;
+    font-weight:  bold;
+    cursor:  pointer;
+    border-radius: 10px;
+}
+
+form input{
+    float: left;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid #eee;
+    margin: 0 1%;
+    padding: 10px;
+    display: block;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+form textarea{
+    float: left;
+    width: 20%;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid #eee;
+    margin: 0 1%;
+    display: block;
+    box-sizing: border-box;
+    font-size: 18px;
+    resize: none;
+}
+
+form input:focus{
+    outline: none;
+    border-bottom: 3px solid #be3232;
+    padding-bottom: 8px;
+    transition: all ease 0.2s;
+}
+
+form:after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+button{
+    border: 0;
+    background: #be3232;
+    /* border-radius: 10px; */
+    border-radius: 12px;
+    padding: 13px;
+    margin-top: 13px;
+    /* width: 30%; */
+    /* box-shadow: -1px 0px 1px rgba(0,0,0,0.1); */
+    box-shadow: 1px 1px 1px 1px rgba(0.1,0.1,0.1,0.1);
+    font-weight: bold;
+    font-family: ubuntu;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: white;
+}
