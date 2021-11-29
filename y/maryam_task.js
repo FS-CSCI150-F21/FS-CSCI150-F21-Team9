@@ -51,13 +51,6 @@ function renderTasklist(doc){
     })
 }
 
-// // getting data
-//     database.collection('tasks').get().then((snapshot) => {
-//     snapshot.docs.forEach(doc => {
-//         renderTasklist(doc);
-//     })
-//     });
-
 
 // saving data
 form.addEventListener('submit', (e) => {
