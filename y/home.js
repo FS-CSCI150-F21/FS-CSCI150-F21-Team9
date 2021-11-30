@@ -55,3 +55,11 @@ form.addEventListener("submit", (e) => {
     form.subject.value = "";
   });
 
+  const logout = document.querySelector('#logout');
+logout.addEventListener('click', (e) => {
+  e.preventDefault();
+  auth.signOut();
+  //uncomment code donw below to check if user is logged out 
+  console.log('user signed out');
+});
+
