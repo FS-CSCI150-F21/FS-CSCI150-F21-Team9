@@ -1,4 +1,4 @@
-import M from "materialize-css"
+// import M from "materialize-css"
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDTux8kStcOHDEmLKB_fbqGbxNE2lLKHL4",
@@ -15,18 +15,29 @@ firebase.initializeApp(firebaseConfig);
 // Initialize variables
 const auth = firebase.auth();
 const database = firebase.firestore();
+var messagesRef = firebase.database().ref('messages');
 
 
 //listen for auth status change 
-auth.onAuthStateChanged(user => {
-  //console.log(user)
-  if(user){
-    console.log('user logged in', user);
+// auth.onAuthStateChanged(user => {
+//   //console.log(user)
+//   if(user){
+//     console.log('user logged in', user);
+//   }
+//   else {
+//     console.log('user logged out');
+//   }
+// });
+//
+//check if user is logged in and redirect to home page
+//Handle Account Status
+firebase.auth().onAuthStateChanged(user => {
+  if(user) {
+    window.location = 'home.html'; //After successful login, user will be redirected to home.html
   }
-  else {
-    console.log('user logged out');
-  }
-})
+});
+
+//
 // const firestore = firebase.firestore();
 //google log in
 function googleLogin() {
@@ -34,18 +45,19 @@ function googleLogin() {
   firebase.auth().signInWithPopup(provider1)
       .then(result => {
         const user = result.user;
-      })
+      });
 }
 function facebookLogin() {
   const provider = new firebase.auth.FacebookAuthProvider();
   firebase.auth().signInWithPopup(provider)
   .then(result => {
     const user = result.user;
-  })
+  });
 }
 //import M from "materialize-css"
 //singup new users
 const signupForm = document.querySelector('#Sign-Up');
+// const event = document.querySelector('e')
 signupForm.addEventListener('submit', (e) => {
   e.preventDefault();
   //get user info
@@ -53,13 +65,22 @@ signupForm.addEventListener('submit', (e) => {
   const password = signupForm['signup-password'].value;
   //console.log(email, password);
   //sign up the user
-  auth.createUserWithEmailAndPassword(email,password).then(cred => {
-    //console.log(cred.user);
+  auth.createUserWithEmailAndPassword(email,password).then(cred => {  //create user
+    //will return sepecific user details
+
+    // return database.collection('users').doc(cred.user.uid).set({ //used to access user with sepcific data
+    //   event: eventForm['submit-event'].value
+    // });
+    // console.log(cred.user);
     const modal = document.querySelector('#modal-signup')
     M.Modal.getInstance(modal).close();
     signupForm.reset();
-  })
-})
+  }).then(()=> {
+     const modal = document.querySelector('#modal-signup')
+    M.Modal.getInstance(modal).close();
+    signupForm.reset();
+  });
+});
 //code need for logout method
 //html <a href"#" class "grey-text id="logout">Logout</a>
 const logout = document.querySelector('#logout');
@@ -87,3 +108,35 @@ signinForm.addEventListener('submit', (e) => {
     signinForm.reset();
   });
 });
+
+
+///Contact form submit
+document.getElementById('issue-form').addEventListener('submit', submitForm);
+
+//submit form
+function submitForm(e){
+  e.preventDefault();
+  //console.log(123);
+  //get values
+  var email = getInputVal('email');
+  var subject = getInputVal('subject');
+  var issue = getInputVal('issue');
+  //check if working
+  //console.log(email);
+  //save to firebase
+  saveMessage(email,subject,issue);
+}
+//fucntion to get fomr values
+function getInputVal(id){
+  return document.getElementById(id).value;
+}
+//save message to firebase
+function saveMessage(email,subject,issue) {
+  var newMessageRef = messagesRef.push();
+  newMessageRef.set({
+    email: email,
+    issue: issue,
+    subject: subject
+  });
+}
+
