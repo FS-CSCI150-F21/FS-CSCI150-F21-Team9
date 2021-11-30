@@ -1,24 +1,3 @@
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyDTux8kStcOHDEmLKB_fbqGbxNE2lLKHL4",
-    authDomain: "paw-lender.firebaseapp.com",
-    databaseURL: "https://paw-lender-default-rtdb.firebaseio.com",
-    projectId: "paw-lender",
-    storageBucket: "paw-lender.appspot.com",
-    messagingSenderId: "156009579264",
-    appId: "1:156009579264:web:e9123a4fd752386f0669e5",
-    measurementId: "G-ZSRT2Q966P"
-};
-  
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-// Initialize variables
-const auth = firebase.auth();
-const db = firebase.firestore();
-
-
 const tasklist = document.querySelector('#task-list');
 const form = document.querySelector('#add-task-form');
 
@@ -47,15 +26,22 @@ function renderTasklist(doc){
     cross.addEventListener('click', (e) => {
         e.stopPropagation();
         let id= e.target.parentElement.getAttribute('data-id');
-        db.collection('tasks').doc(id).delete();
+        database.collection('tasks').doc(id).delete();
     })
 }
+
+// // getting data
+//     database.collection('tasks').get().then((snapshot) => {
+//     snapshot.docs.forEach(doc => {
+//         renderTasklist(doc);
+//     })
+//     });
 
 
 // saving data
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    db.collection('tasks').add({
+    database.collection('tasks').add({
         task: form.task.value,
         description: form.description.value,
         category: form.category.value
@@ -66,7 +52,7 @@ form.category.value ='';
 })
 
 // realtime listener
-db.collection('tasks').orderBy('category').onSnapshot(snapshot => { // changed task to category
+database.collection('tasks').orderBy('category').onSnapshot(snapshot => { // changed task to category
     let changes = snapshot.docChanges();
     // console.log(changes);
     changes.forEach(change => {
@@ -79,4 +65,6 @@ db.collection('tasks').orderBy('category').onSnapshot(snapshot => { // changed t
             tasklist.removeChild(li);
         }
     })
-}) 
+})
+
+
