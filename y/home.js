@@ -54,6 +54,7 @@ form.addEventListener("submit", (e) => {
     form.issue.value = "";
     form.subject.value = "";
   });
+  //user logout redirect to home page
 
   const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
@@ -61,5 +62,7 @@ logout.addEventListener('click', (e) => {
   auth.signOut();
   //uncomment code donw below to check if user is logged out 
   console.log('user signed out');
+  window.location = 'home.html';
 });
+//redirect user to home page if sign-out
 

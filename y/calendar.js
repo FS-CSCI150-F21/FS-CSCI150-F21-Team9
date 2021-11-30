@@ -65,3 +65,12 @@ document.querySelector(".next").addEventListener("click", () =>{
 renderCalendar();
 
 /*--------------------------- Event Placeholder ---------------------------*/
+//user logout redirect to home page
+const logout = document.querySelector('#logout');
+logout.addEventListener('click', (e) => {
+  e.preventDefault();
+  auth.signOut();
+  //uncomment code donw below to check if user is logged out 
+  console.log('user signed out');
+  window.location = 'home.html';
+});
