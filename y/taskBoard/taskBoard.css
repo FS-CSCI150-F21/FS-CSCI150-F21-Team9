@@ -110,8 +110,14 @@ li span:nth-child(2){ /* Description */
     color: #999;
     display: block;
 }
+li span:nth-child(3){ /* due date */
+    font-size: 16px;
+    margin-top: 6px;
+    text-decoration: underline;
+    color: rgba(15, 45, 100, 0.6);
+}
 
-li span:nth-child(3){ /* cateogry */
+li span:nth-child(4){ /* red/high priority cateogry */
     font-size: 16px;
     margin-top: 6px;
     color: black;
@@ -120,7 +126,7 @@ li span:nth-child(3){ /* cateogry */
     text-align: center;
 }
 
-li span:nth-child(4){ /* cateogry */
+li span:nth-child(5){ /* yellow/mid priority cateogry */
     font-size: 16px;
     margin-top: 6px;
     font-weight:bolder;
@@ -128,7 +134,7 @@ li span:nth-child(4){ /* cateogry */
     text-align: center;
 }
 
-li span:nth-child(5){ /* cateogry */
+li span:nth-child(6){ /* green/low priority cateogry */
     font-size: 16px;
     margin-top: 6px;
     font-weight:bolder;
@@ -166,7 +172,6 @@ form input{
     margin: 0;
     border: 0;
     border-bottom: 1px solid #eee;
-    margin: 0 1%;
     padding: 10px;
     display: block;
     box-sizing: border-box;
@@ -216,7 +221,7 @@ button:active {
     margin: 30px;
     padding:  20px 80px;
     border-radius: 10px 10px 10px 10px;
-    height: 60%; 
+    height: 70%; 
     display: flex;
     justify-content: center;
     overflow-y: scroll;
@@ -226,7 +231,7 @@ button:active {
 
 .task {
     display: inline-block;
-    height: auto;
+    height: auto%;
     width: 90%;
     background-color: rgba(15, 45, 100, 0.6);
     border-radius: 10px;

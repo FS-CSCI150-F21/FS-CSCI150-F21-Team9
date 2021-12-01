@@ -23,6 +23,7 @@ function renderTasklist(doc){
     let li = document.createElement('li');
     let task = document.createElement('span');
     let description = document.createElement('span');
+    let dueDate = document.createElement('span')
     let red = document.createElement('span');
     let yellow = document.createElement('span');
     let green = document.createElement('span');
@@ -31,6 +32,7 @@ function renderTasklist(doc){
     li.setAttribute('data-id', doc.id)
     task.textContent = doc.data().task;
     description.textContent = doc.data().description;
+    dueDate.textContent = doc.data().dueDate;
     red.textContent = doc.data().red;
     yellow.textContent = doc.data().yellow;
     green.textContent = doc.data().green;
@@ -38,6 +40,7 @@ function renderTasklist(doc){
 
     li.appendChild(task);
     li.appendChild(description);
+    li.appendChild(dueDate);
     li.appendChild(red);
     li.appendChild(yellow);
     li.appendChild(green);
@@ -59,12 +62,14 @@ form.addEventListener('submit', (e) => {
     database.collection('tasks').add({
         task: form.task.value,
         description: form.description.value,
+        dueDate: form.dueDate.value,
         red: form.red.value,
         yellow: form.yellow.value,
         green: form.green.value
     });
 form.task.value = '';
 form.description.value ='';
+form.dueDate.value='';
 form.red.value ='';
 form.yellow.value ='';
 form.green.value ='';
