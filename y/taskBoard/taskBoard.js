@@ -83,16 +83,16 @@ database.collection('tasks').orderBy('category').onSnapshot(snapshot => { // cha
         }
     })
 })
-//user log out reirect to home page
-//wont work untill taskboard is in same directory as home.html
-// const logout = document.querySelector('#logout');
-// logout.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   auth.signOut();
-//   //uncomment code donw below to check if user is logged out 
-//   console.log('user signed out');
-//   window.location = '../home.html';
-//   ///Users/marcosmartinez/Desktop/FS-CSCI150-F21-Team9/Y/home.html
-// });
+// user log out reirect to home page
+// wont work untill taskboard is in same directory as home.html
+const logout = document.querySelector('#logout');
+logout.addEventListener('click', (e) => {
+  e.preventDefault();
+  auth.signOut();
+  //uncomment code donw below to check if user is logged out 
+  console.log('user signed out');
+  window.location = '../home.html';
+  ///Users/marcosmartinez/Desktop/FS-CSCI150-F21-Team9/Y/home.html
+});
 
 
