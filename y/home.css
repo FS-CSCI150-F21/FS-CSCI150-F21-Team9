@@ -5,6 +5,10 @@
   font-family: sans-serif;
 }
 
+html {
+  background-color: rgba(1, 68, 155, 0.3);
+}
+
 /*---------------------------------- Header ----------------------------------*/
 
 .title-page {
@@ -15,9 +19,18 @@
   position: absolute;
   top: 10px;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-65%);
   padding-top: 30px;
   font-size: 56px;
+}
+
+.title-page img {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  top: 30px;
+  left: 50%;
+  transform: translateX(140%);
 }
 
 ul {
@@ -33,11 +46,11 @@ li {
   font-size: 18px;
   padding: 8px;
   border: none;
-  margin-top: 100px;
-  margin-right: 40px;
+  top: 110px;
+  margin-right: 50px;
   cursor: pointer;
   color: black;
-  font-weight: bold;
+  font-weight: bolder;
   text-decoration: none;
   background-color: transparent;
 }
@@ -198,7 +211,7 @@ a:visited {
   height: 300px;
   width: 1200px;
   text-align: center;
-  background-color: rgba(0, 195, 255, 0.274);
+  background-color: rgb(188, 234, 248);
   padding: 20px 200px 20px 200px;
   border-radius: 10px;
   box-shadow: 5px 10px rgba(0, 63, 82, 0.5);
