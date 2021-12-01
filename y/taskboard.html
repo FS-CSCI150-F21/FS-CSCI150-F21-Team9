@@ -1,58 +1,51 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="taskboard.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  </head>
-  <body>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        
+        <!-------------------- Font Awwsome -------------------->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
 
-    <div class="container">
-      <input type="text" class="txtb" placeholder="Add a task">
-      <div class="notcomp">
-        <h3>Not Completed</h3>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
 
+        <!-------------------- CSS -------------------->
+        <title>Task Page</title>
+        <link rel="stylesheet" href="taskBoard.css">
+    </head>
+    <body>
+        <header>
+            <h1 style="color: rgb(4, 23, 49);">Task Board</h1>
+            <ul1>
+              <li1><a href="../home.html" class="link-btn">Home</a></li> 
+              <li1><a href="../calendar.html" class="link-btn">Calendar</a></li>
+              <li1><button class="logout" id="logout">Logout</button></li>
+            </ul1>
+          </header>
 
+        <div class="content">
+            <form id="add-task-form">
+                <input type="text" name="task" placeholder="Task name" required>
+                <input type="text" name="description" placeholder="Task description">
+                <input type="text" name="category" placeholder="Category name">
+                <button>Add Task</button>
+            </form>
+        </div>
 
-      </div>
+        <div class="currentTask">
+            <div class="task">
+                <h2>Task View</h2> 
+            </div>
+            <button style="background-color: rgba(0, 0, 0, 0.6);" class="task-display">
+                <form id="add-task-form"></form>
+                <ul id="task-list"></ul>
+            </button>       
+        </div> 
 
-      <div class="comp">
-        <h3>Completed</h3>
-      </div>
-    </div>
-
-
-    <script type="text/javascript">
-      $(".txtb").on("keyup",function(e){
-        //13  means enter button
-        if(e.keyCode == 13 && $(".txtb").val() != "")
-        {
-          var task = $("<div class='task'></div>").text($(".txtb").val());
-          var del = $("<i class='fas fa-trash-alt'></i>").click(function(){
-            var p = $(this).parent();
-            p.fadeOut(function(){
-              p.remove();
-            });
-          });
-
-          var check = $("<i class='fas fa-check'></i>").click(function(){
-            var p = $(this).parent();
-            p.fadeOut(function(){
-              $(".comp").append(p);
-              p.fadeIn();
-            });
-            $(this).remove();
-          });
-
-          task.append(del,check);
-          $(".notcomp").append(task);
-            //to clear the input
-          $(".txtb").val("");
-        }
-      });
-    </script>
-
-  </body>
+        <script src="./index.js"></script>
+        <script src="taskBoard.js"></script>
+        
+    </body>
 </html>
