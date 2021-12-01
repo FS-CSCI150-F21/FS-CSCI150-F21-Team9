@@ -241,7 +241,7 @@ hr {
 .event {
   position: relative;
   display: inline-block;
-  height: 80px;
+  height: auto;
   width: 95%;
   background-color: rgba(0, 81, 255, 0.3);
   border-radius: 10px;
@@ -249,6 +249,11 @@ hr {
   margin-right: 10px;
   padding: 10px;
   transition: 0.2s;
+}
+
+.event:nth-child(even){
+  padding: 20px;
+  background: rgba(0, 60, 247, 0.3);
 }
 
 .event:hover {
@@ -266,7 +271,7 @@ hr {
   font-size: 18px;
   margin-top: 6px;
   margin-left: 10px;
-  color: rgb(32, 32, 32);
+  color: rgb(17, 46, 177);
 }
 
 .event i {
