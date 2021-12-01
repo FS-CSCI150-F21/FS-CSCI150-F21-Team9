@@ -14,7 +14,7 @@
     position: absolute;
     height: 80px;
     width: 80px;
-    top: 40px;
+    top: 30px;
     left: 51%;
     transform: translateX(140%);
 }
@@ -34,13 +34,11 @@ hr {
     border-width: 0;
     margin: 0 40px 0 40px;
 }
-}
 
 h1{
     color: #fff;
     font-size: 64px;
     letter-spacing: 2px;
-    margin-top: 80px;
     text-align: center;
 }
 
@@ -50,64 +48,6 @@ h2{  /* Used For Current Task Name */
     text-align: center;
     font-family: ubuntu;
     font-size: 20px;
-}
-
-.content{ /* Create Task + Task List Display */
-    background-color: rgba(0, 81, 255, 0.6);
-    width: 30%;
-    margin: 30px;
-    padding:  20px 30px;
-    border-radius: 10px;
-    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
-    float: left;
-
-}
-
-.currentTask{ /* Current Task Display */
-    /* background: #fff; */
-    background-color: rgba(0, 81, 255, 0.6);
-    width: 50%;
-    margin: 30px;
-    padding:  20px 30px;
-    border-radius: 10px 10px 10px 10px;
-    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
-    height: 70%;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    overflow-y: scroll;
-    position: absolute;
-    right: 0; /* positions it to the right */
-}
-
-.task {
-    display: inline-block;
-    height: auto;
-    width: 90%;
-    background-color: rgba(15, 45, 100, 0.6);
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-right: 10px;
-    position: absolute;
-    border-radius: 10px 10px 10px 10px;
-    top: 10px;
- }
-
-.task-display{
-    display: inline-block;
-    background-color: #fafafa;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-    height: auto;
-    width: 90%;
-    border-radius: 10px 10px 10px 10px;
-    position: absolute;
-    top: 150px;
 }
 
 .link-btn,
@@ -120,7 +60,7 @@ h2{  /* Used For Current Task Name */
   background-color: transparent;
   text-decoration: none;
   margin-top: 80px;
-  margin-right: 5px; 
+  margin-right: 50px; 
 }
 
 .logout:hover,
@@ -136,9 +76,10 @@ ul{
     padding: 0;
 }
 
-li{
+li{ /* tasks */
     padding: 20px;
     background: #f6f6f6;
+    /* background: rgba(0, 81, 255, 0.3); */
     font-size: 20px;
     color: #555;
     position: relative;
@@ -181,6 +122,17 @@ li div{ /* cross: x delete button onn task */
     border-radius: 10px;
 }
 
+.content{ /* Create Task + Task List Display */
+    /* background-color: rgba(0, 81, 255, 0.6); */
+    background-color: rgba(15, 45, 100, 0.6);
+    width: 30%;
+    margin: 30px;
+    padding:  20px 30px;
+    border-radius: 10px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+    float: left;
+}
+
 form input{
     float: left;
     width: 100%;
@@ -192,29 +144,15 @@ form input{
     display: block;
     box-sizing: border-box;
     font-size: 18px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 68, 253, 0.2);
     color: white;
-
-}
-
-form textarea{
-    float: left;
-    width: 20%;
-    margin: 0;
-    border: 0;
-    border-bottom: 1px solid #eee;
-    margin: 0 1%;
-    display: block;
-    box-sizing: border-box;
-    font-size: 18px;
-    resize: none;
 }
 
 form input:focus{
     outline: none;
     border-bottom: 3px solid #452a91;
     padding-bottom: 8px;
-    transition: all ease 0.2s;
+    transition: all ease 0.2s; 
 }
 
 form:after{
@@ -225,15 +163,61 @@ form:after{
 
 button{
     border: 0;
-    background-color: rgba(0, 81, 255, 0.6);    /* border-radius: 10px; */
+    background-color: rgba(182, 198, 241, 0.2);
     border-radius: 12px;
     padding: 13px;
     margin-top: 13px;
-    /* width: 30%; */
-    /* box-shadow: -1px 0px 1px rgba(0,0,0,0.1); */
-    font-weight: bold;
     font-family: ubuntu;
     font-size: 14px;
     letter-spacing: 1px;
     color: white;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.currentTask{ /* Current Task Display */
+    background-color: rgba(0, 68, 253, 0.2);
+    width: 50%;
+    margin: 30px;
+    padding:  20px 80px;
+    border-radius: 10px 10px 10px 10px;
+    height: 60%; 
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+    position: absolute;
+    right: 0; /* positions it to the right */
+}
+
+.task {
+    display: inline-block;
+    height: auto;
+    width: 90%;
+    background-color: rgba(15, 45, 100, 0.6);
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    position: absolute;
+    border-radius: 10px 10px 10px 10px;
+    top: 10px;
+ }
+
+.task-display{
+    display: inline-block;
+    background-color: #fafafa;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    height: auto;
+    width: 90%;
+    border-radius: 10px 10px 10px 10px;
+    position: absolute;
+    top: 100px;
+    font-family: cursive;
 }
