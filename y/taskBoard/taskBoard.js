@@ -1,7 +1,7 @@
 const firebaseConfig = {
     apiKey: "AIzaSyDTux8kStcOHDEmLKB_fbqGbxNE2lLKHL4",
     authDomain: "paw-lender.firebaseapp.com",
-    databaseURL: "https://paw-lender-default-rtdb.firebaseio.com/",
+    databaseURL: "https://paw-lender-default-rtdb.firebaseio.com",
     projectId: "paw-lender",
     storageBucket: "paw-lender.appspot.com",
     messagingSenderId: "156009579264",
@@ -9,7 +9,7 @@ const firebaseConfig = {
     measurementId: "G-ZSRT2Q966P"
   };
 
-  // Initialize Firebase
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 // Initialize variables
 const auth = firebase.auth();
