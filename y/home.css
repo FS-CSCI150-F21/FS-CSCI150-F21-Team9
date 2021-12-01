@@ -149,8 +149,22 @@ a:visited {
   justify-content: center;
 }
 
+.page-link img {
+  height: 60%;
+  width: 80%;
+  margin-top: 25px;
+  opacity: 0.8;
+  border-radius: 10px;
+  transition: transform 0.5s;
+}
+
 .page-link:hover > .month-day {
   transform: scale(1.2);
+  transition: transform 0.5s;
+}
+
+.page-link:hover > img {
+  transform: scale(1.1);
   transition: transform 0.5s;
 }
 
