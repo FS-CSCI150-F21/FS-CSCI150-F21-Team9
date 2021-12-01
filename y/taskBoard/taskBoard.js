@@ -23,18 +23,24 @@ function renderTasklist(doc){
     let li = document.createElement('li');
     let task = document.createElement('span');
     let description = document.createElement('span');
-    let category = document.createElement('span');
+    let red = document.createElement('span');
+    let yellow = document.createElement('span');
+    let green = document.createElement('span');
     let cross = document.createElement('div');
 
     li.setAttribute('data-id', doc.id)
     task.textContent = doc.data().task;
     description.textContent = doc.data().description;
-    category.textContent = doc.data().category;
+    red.textContent = doc.data().red;
+    yellow.textContent = doc.data().yellow;
+    green.textContent = doc.data().green;
     cross.textContent = 'x';
 
     li.appendChild(task);
     li.appendChild(description);
-    li.appendChild(category);
+    li.appendChild(red);
+    li.appendChild(yellow);
+    li.appendChild(green);
     li.appendChild(cross);
 
     tasklist.appendChild(li);
@@ -47,29 +53,25 @@ function renderTasklist(doc){
     })
 }
 
-// // getting data
-//     database.collection('tasks').get().then((snapshot) => {
-//     snapshot.docs.forEach(doc => {
-//         renderTasklist(doc);
-//     })
-//     });
-
-
 // saving data
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     database.collection('tasks').add({
         task: form.task.value,
         description: form.description.value,
-        category: form.category.value
+        red: form.red.value,
+        yellow: form.yellow.value,
+        green: form.green.value
     });
 form.task.value = '';
 form.description.value ='';
-form.category.value ='';
+form.red.value ='';
+form.yellow.value ='';
+form.green.value ='';
 })
 
 // realtime listener
-database.collection('tasks').orderBy('category').onSnapshot(snapshot => { // changed task to category
+database.collection('tasks').orderBy('green').onSnapshot(snapshot => { // changed task to category
     let changes = snapshot.docChanges();
     // console.log(changes);
     changes.forEach(change => {
@@ -94,5 +96,3 @@ logout.addEventListener('click', (e) => {
   window.location = '../home.html';
   ///Users/marcosmartinez/Desktop/FS-CSCI150-F21-Team9/Y/home.html
 });
-
-

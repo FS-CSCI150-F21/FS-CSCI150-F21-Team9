@@ -50,6 +50,12 @@ h2{  /* Used For Current Task Name */
     font-size: 20px;
 }
 
+h3 { /* Used for form */
+    color: white;
+    font-size:20px;
+    font-family: ubuntu;
+}
+
 .link-btn,
 .logout {
   font-size: 18px;
@@ -98,16 +104,36 @@ li span{
     display: block;
 }
 
-li span:nth-child(2){
+li span:nth-child(2){ /* Description */
     font-size: 16px;
     margin-top: 6px;
     color: #999;
+    display: block;
 }
 
 li span:nth-child(3){ /* cateogry */
     font-size: 16px;
     margin-top: 6px;
-    color: rgb(17, 46, 177);
+    color: black;
+    font-weight:bolder;
+    background: red;
+    text-align: center;
+}
+
+li span:nth-child(4){ /* cateogry */
+    font-size: 16px;
+    margin-top: 6px;
+    font-weight:bolder;
+    background: yellow;
+    text-align: center;
+}
+
+li span:nth-child(5){ /* cateogry */
+    font-size: 16px;
+    margin-top: 6px;
+    font-weight:bolder;
+    background: yellowgreen;
+    text-align: center;
 }
 
 li div{ /* cross: x delete button onn task */
@@ -177,6 +203,12 @@ button{
 button:hover{
     cursor: pointer;
 }
+
+button:active {
+    background-color: rgba(0, 68, 253, 0.2);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
 
 .currentTask{ /* Current Task Display */
     background-color: rgba(0, 68, 253, 0.2);

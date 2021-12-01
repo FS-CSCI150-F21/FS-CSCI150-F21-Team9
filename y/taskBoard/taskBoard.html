@@ -14,7 +14,7 @@
         <!-------------------- CSS -------------------->
         <title>Task Board</title>
         <link rel="stylesheet" href="taskBoard.css">
-    </head>
+
     <body>
           <header class="title-page">
             <h1 style="color: black;">Task Board</h1>
@@ -31,9 +31,14 @@
 
         <div class="content">
             <form id="add-task-form">
+                <h3>Create and describe your task</h3>
                 <input type="text" name="task" placeholder="Task name" required>
                 <input type="text" name="description" placeholder="Task description">
-                <input type="text" name="category" placeholder="Category name">
+                <p>&nbsp;</p> 
+                <h3>Assign it to a category with the appropiate priority</h3>
+                <input type="text" name="red" placeholder="Category (Red: Top Priority)" >
+                <input type="text" name="yellow" placeholder="Category (Yellow: Mid Priority)" >
+                <input type="text" name="green" placeholder="Category (Green: Low Priority )" >
                 <button style= "font-weight: bold;">Add Task</button>
             </form>
         </div>
@@ -52,3 +57,7 @@
         <script src="taskBoard.js"></script>
     </body>
 </html>
+
+
+
+
