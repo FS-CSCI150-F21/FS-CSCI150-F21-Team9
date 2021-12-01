@@ -48,31 +48,12 @@ form.addEventListener("submit", (e) => {
     subject: form.subject.value
     });
   
-<<<<<<< HEAD
-  // Clear the form after user hit the submit button
-  form.email.value = "";
-  form.issue.value = "";
-  form.subject.value = "";
-});
-//user logout redirect to home page
-=======
     // Clear the form after user hit the submit button
     form.email.value = "";
     form.issue.value = "";
     form.subject.value = "";
   });
   //user logout redirect to home page
-
-  const logout = document.querySelector('#logout');
-logout.addEventListener('click', (e) => {
-  e.preventDefault();
-  auth.signOut();
-  //uncomment code donw below to check if user is logged out 
-  console.log('user signed out');
-  window.location = 'home.html';
-});
-//redirect user to home page if sign-out
->>>>>>> b87040e9fa85653bc97d0f6aef6286281d240cfe
 
 const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
