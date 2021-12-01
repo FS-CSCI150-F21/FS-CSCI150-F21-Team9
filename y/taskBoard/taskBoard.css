@@ -1,28 +1,39 @@
+.title-page {
+    height: 20vh;
+    text-align: right;
+}
+  
+.title-page h1 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-65%);
+    font-size: 56px;
+}
+
+.title-page img {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    top: 40px;
+    left: 51%;
+    transform: translateX(140%);
+}
+
 body{
     background-color: rgba(1, 68, 155, 0.3);
     font-family: ubuntu;
 }
 
 header {
-    height: 15vh;
-    width: 100%;
     font-family: sans-serif;
-  }
-  
-header h1 {
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translate(-50%);
-    padding-top: 6px;
-    font-size: 56px;
 }
 
 hr {
     height: 5px;
     background-color: rgba(0, 0, 0, 0.815);
     border-width: 0;
-    margin: 15px 40px 25px 40px;
+    margin: 0 40px 0 40px;
+}
 }
 
 h1{
@@ -32,8 +43,8 @@ h1{
     margin-top: 80px;
     text-align: center;
 }
-h2{  /*Used For Current Task Name */
-    /* color: rgb(192, 27, 27); */
+
+h2{  /* Used For Current Task Name */
     color: white;
     letter-spacing: 2px;
     text-align: center;
@@ -99,22 +110,6 @@ h2{  /*Used For Current Task Name */
     top: 150px;
 }
 
-ul1 {
-    text-align: right;
-}
-  
-li1 {
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
-    margin-top: 80px;
-    margin-right: 50px;
-}
-
 .link-btn,
 .logout {
   font-size: 18px;
@@ -125,13 +120,15 @@ li1 {
   background-color: transparent;
   text-decoration: none;
   margin-top: 80px;
-  margin-right: 25px;
-    margin-left: 35px;
+  margin-right: 5px; 
 }
 
 .logout:hover,
 .link-btn:hover {
   color: rgba(0, 0, 0, 0.7);
+}
+ul1{
+    text-align: right;
 }
 
 ul{
@@ -234,7 +231,6 @@ button{
     margin-top: 13px;
     /* width: 30%; */
     /* box-shadow: -1px 0px 1px rgba(0,0,0,0.1); */
-    box-shadow: 1px 1px 1px 1px rgba(0.1,0.1,0.1,0.1);
     font-weight: bold;
     font-family: ubuntu;
     font-size: 14px;

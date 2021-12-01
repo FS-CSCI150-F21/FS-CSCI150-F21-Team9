@@ -12,18 +12,21 @@
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
 
         <!-------------------- CSS -------------------->
-        <title>Task Page</title>
+
         <link rel="stylesheet" href="taskBoard.css">
     </head>
     <body>
-        <header>
+          <header class="title-page">
             <h1 style="color: rgb(4, 23, 49);">Task Board</h1>
             <ul1>
-              <li1><a href="../home.html" class="link-btn">Home</a></li> 
-              <li1><a href="../calendar.html" class="link-btn">Calendar</a></li>
-              <li1><button class="logout" id="logout">Logout</button></li>
+              <img src="../images/paw.png" alt="Pawlender" />
+              <li1><a href="../home.html" class="link-btn">Home</a></li>
+              <li1><a href="../Calendar.html" class="link-btn">Calendar</a></li1> 
+              <li1><button style= "font-family: sans-serif" class="link-btn" id="logout">Logout</button></li1>
             </ul1>
           </header>
+
+    <hr>
 
         <div class="content">
             <form id="add-task-form">
@@ -46,6 +49,5 @@
 
         <script src="./index.js"></script>
         <script src="taskBoard.js"></script>
-        
     </body>
 </html>
